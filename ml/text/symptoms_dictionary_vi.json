@@ -1,0 +1,1514 @@
+{
+    "version": "1.0",
+    "description": "Từ điển 377 triệu chứng đã được dịch tự động sang Tiếng Việt",
+    "symptoms": [
+        {
+            "id": "anxiety and nervousness",
+            "vi_label": "Lo lắng và hồi hộp"
+        },
+        {
+            "id": "depression",
+            "vi_label": "Trầm cảm"
+        },
+        {
+            "id": "shortness of breath",
+            "vi_label": "Hụt hơi"
+        },
+        {
+            "id": "depressive or psychotic symptoms",
+            "vi_label": "Triệu chứng trầm cảm hoặc loạn thần"
+        },
+        {
+            "id": "sharp chest pain",
+            "vi_label": "Đau ngực dữ dội"
+        },
+        {
+            "id": "dizziness",
+            "vi_label": "Chóng mặt"
+        },
+        {
+            "id": "insomnia",
+            "vi_label": "Mất ngủ"
+        },
+        {
+            "id": "abnormal involuntary movements",
+            "vi_label": "Chuyển động không tự nguyện bất thường"
+        },
+        {
+            "id": "chest tightness",
+            "vi_label": "Tức ngực"
+        },
+        {
+            "id": "palpitations",
+            "vi_label": "Đánh trống ngực"
+        },
+        {
+            "id": "irregular heartbeat",
+            "vi_label": "Nhịp tim không đều"
+        },
+        {
+            "id": "breathing fast",
+            "vi_label": "Thở nhanh"
+        },
+        {
+            "id": "hoarse voice",
+            "vi_label": "Giọng khàn"
+        },
+        {
+            "id": "sore throat",
+            "vi_label": "Đau họng"
+        },
+        {
+            "id": "difficulty speaking",
+            "vi_label": "Khó nói"
+        },
+        {
+            "id": "cough",
+            "vi_label": "Ho"
+        },
+        {
+            "id": "nasal congestion",
+            "vi_label": "Nghẹt mũi"
+        },
+        {
+            "id": "throat swelling",
+            "vi_label": "Sưng họng"
+        },
+        {
+            "id": "diminished hearing",
+            "vi_label": "Giảm thính lực"
+        },
+        {
+            "id": "lump in throat",
+            "vi_label": "Nghẹn họng"
+        },
+        {
+            "id": "throat feels tight",
+            "vi_label": "Cổ họng cảm thấy căng cứng"
+        },
+        {
+            "id": "difficulty in swallowing",
+            "vi_label": "Khó nuốt"
+        },
+        {
+            "id": "skin swelling",
+            "vi_label": "Sưng da"
+        },
+        {
+            "id": "retention of urine",
+            "vi_label": "Giữ nước tiểu"
+        },
+        {
+            "id": "groin mass",
+            "vi_label": "Khối lượng háng"
+        },
+        {
+            "id": "leg pain",
+            "vi_label": "Đau chân"
+        },
+        {
+            "id": "hip pain",
+            "vi_label": "Đau hông"
+        },
+        {
+            "id": "suprapubic pain",
+            "vi_label": "Đau vùng thượng vị"
+        },
+        {
+            "id": "blood in stool",
+            "vi_label": "Máu trong phân"
+        },
+        {
+            "id": "lack of growth",
+            "vi_label": "Thiếu tăng trưởng"
+        },
+        {
+            "id": "emotional symptoms",
+            "vi_label": "Triệu chứng cảm xúc"
+        },
+        {
+            "id": "elbow weakness",
+            "vi_label": "Yếu khuỷu tay"
+        },
+        {
+            "id": "back weakness",
+            "vi_label": "Điểm yếu ở lưng"
+        },
+        {
+            "id": "pus in sputum",
+            "vi_label": "Mủ trong đờm"
+        },
+        {
+            "id": "symptoms of the scrotum and testes",
+            "vi_label": "Triệu chứng của bìu và tinh hoàn"
+        },
+        {
+            "id": "swelling of scrotum",
+            "vi_label": "Sưng bìu"
+        },
+        {
+            "id": "pain in testicles",
+            "vi_label": "Đau ở tinh hoàn"
+        },
+        {
+            "id": "flatulence",
+            "vi_label": "Đầy hơi"
+        },
+        {
+            "id": "pus draining from ear",
+            "vi_label": "Mủ chảy ra từ tai"
+        },
+        {
+            "id": "jaundice",
+            "vi_label": "Bệnh vàng da"
+        },
+        {
+            "id": "mass in scrotum",
+            "vi_label": "Khối ở bìu"
+        },
+        {
+            "id": "white discharge from eye",
+            "vi_label": "Mắt có dịch trắng"
+        },
+        {
+            "id": "irritable infant",
+            "vi_label": "Trẻ sơ sinh cáu kỉnh"
+        },
+        {
+            "id": "abusing alcohol",
+            "vi_label": "Lạm dụng rượu"
+        },
+        {
+            "id": "fainting",
+            "vi_label": "Ngất xỉu"
+        },
+        {
+            "id": "hostile behavior",
+            "vi_label": "Hành vi thù địch"
+        },
+        {
+            "id": "drug abuse",
+            "vi_label": "Lạm dụng ma túy"
+        },
+        {
+            "id": "sharp abdominal pain",
+            "vi_label": "Đau bụng dữ dội"
+        },
+        {
+            "id": "feeling ill",
+            "vi_label": "Cảm thấy ốm"
+        },
+        {
+            "id": "vomiting",
+            "vi_label": "Nôn mửa"
+        },
+        {
+            "id": "headache",
+            "vi_label": "Đau đầu"
+        },
+        {
+            "id": "nausea",
+            "vi_label": "Buồn nôn"
+        },
+        {
+            "id": "diarrhea",
+            "vi_label": "Tiêu chảy"
+        },
+        {
+            "id": "vaginal itching",
+            "vi_label": "Ngứa âm đạo"
+        },
+        {
+            "id": "vaginal dryness",
+            "vi_label": "Khô âm đạo"
+        },
+        {
+            "id": "painful urination",
+            "vi_label": "Đi tiểu đau"
+        },
+        {
+            "id": "involuntary urination",
+            "vi_label": "Đi tiểu không tự chủ"
+        },
+        {
+            "id": "pain during intercourse",
+            "vi_label": "Đau khi giao hợp"
+        },
+        {
+            "id": "frequent urination",
+            "vi_label": "Đi tiểu thường xuyên"
+        },
+        {
+            "id": "lower abdominal pain",
+            "vi_label": "Đau bụng dưới"
+        },
+        {
+            "id": "vaginal discharge",
+            "vi_label": "Tiết dịch âm đạo"
+        },
+        {
+            "id": "blood in urine",
+            "vi_label": "Máu trong nước tiểu"
+        },
+        {
+            "id": "hot flashes",
+            "vi_label": "Bốc hỏa"
+        },
+        {
+            "id": "intermenstrual bleeding",
+            "vi_label": "Chảy máu giữa kỳ kinh nguyệt"
+        },
+        {
+            "id": "hand or finger pain",
+            "vi_label": "Đau tay hoặc ngón tay"
+        },
+        {
+            "id": "wrist pain",
+            "vi_label": "Đau cổ tay"
+        },
+        {
+            "id": "hand or finger swelling",
+            "vi_label": "Sưng tay hoặc ngón tay"
+        },
+        {
+            "id": "arm pain",
+            "vi_label": "Đau cánh tay"
+        },
+        {
+            "id": "wrist swelling",
+            "vi_label": "Sưng cổ tay"
+        },
+        {
+            "id": "arm stiffness or tightness",
+            "vi_label": "Độ cứng hoặc độ căng của cánh tay"
+        },
+        {
+            "id": "arm swelling",
+            "vi_label": "Sưng cánh tay"
+        },
+        {
+            "id": "hand or finger stiffness or tightness",
+            "vi_label": "Độ cứng hoặc độ căng của bàn tay hoặc ngón tay"
+        },
+        {
+            "id": "wrist stiffness or tightness",
+            "vi_label": "Cứng cổ tay hoặc căng cứng"
+        },
+        {
+            "id": "lip swelling",
+            "vi_label": "Sưng môi"
+        },
+        {
+            "id": "toothache",
+            "vi_label": "Đau răng"
+        },
+        {
+            "id": "abnormal appearing skin",
+            "vi_label": "Da xuất hiện bất thường"
+        },
+        {
+            "id": "skin lesion",
+            "vi_label": "Tổn thương da"
+        },
+        {
+            "id": "acne or pimples",
+            "vi_label": "Mụn trứng cá hoặc mụn nhọt"
+        },
+        {
+            "id": "dry lips",
+            "vi_label": "Môi khô"
+        },
+        {
+            "id": "facial pain",
+            "vi_label": "Đau mặt"
+        },
+        {
+            "id": "mouth ulcer",
+            "vi_label": "Loét miệng"
+        },
+        {
+            "id": "skin growth",
+            "vi_label": "Tăng trưởng da"
+        },
+        {
+            "id": "eye deviation",
+            "vi_label": "Lệch mắt"
+        },
+        {
+            "id": "diminished vision",
+            "vi_label": "Giảm thị lực"
+        },
+        {
+            "id": "double vision",
+            "vi_label": "Tầm nhìn đôi"
+        },
+        {
+            "id": "cross-eyed",
+            "vi_label": "Lác mắt"
+        },
+        {
+            "id": "symptoms of eye",
+            "vi_label": "Triệu chứng của mắt"
+        },
+        {
+            "id": "pain in eye",
+            "vi_label": "Đau mắt"
+        },
+        {
+            "id": "eye moves abnormally",
+            "vi_label": "Mắt di chuyển bất thường"
+        },
+        {
+            "id": "abnormal movement of eyelid",
+            "vi_label": "Chuyển động bất thường của mí mắt"
+        },
+        {
+            "id": "foreign body sensation in eye",
+            "vi_label": "Cảm giác có vật thể lạ trong mắt"
+        },
+        {
+            "id": "irregular appearing scalp",
+            "vi_label": "Da đầu xuất hiện không đều"
+        },
+        {
+            "id": "swollen lymph nodes",
+            "vi_label": "Sưng hạch bạch huyết"
+        },
+        {
+            "id": "back pain",
+            "vi_label": "Đau lưng"
+        },
+        {
+            "id": "neck pain",
+            "vi_label": "Đau cổ"
+        },
+        {
+            "id": "low back pain",
+            "vi_label": "Đau lưng dưới"
+        },
+        {
+            "id": "pain of the anus",
+            "vi_label": "Đau hậu môn"
+        },
+        {
+            "id": "pain during pregnancy",
+            "vi_label": "Đau khi mang thai"
+        },
+        {
+            "id": "pelvic pain",
+            "vi_label": "Đau vùng chậu"
+        },
+        {
+            "id": "impotence",
+            "vi_label": "Bất lực"
+        },
+        {
+            "id": "infant spitting up",
+            "vi_label": "Trẻ sơ sinh nhổ nước bọt"
+        },
+        {
+            "id": "vomiting blood",
+            "vi_label": "Nôn ra máu"
+        },
+        {
+            "id": "regurgitation",
+            "vi_label": "Sự trào ngược"
+        },
+        {
+            "id": "burning abdominal pain",
+            "vi_label": "Đau bụng nóng rát"
+        },
+        {
+            "id": "restlessness",
+            "vi_label": "Bồn chồn"
+        },
+        {
+            "id": "symptoms of infants",
+            "vi_label": "Triệu chứng của trẻ sơ sinh"
+        },
+        {
+            "id": "wheezing",
+            "vi_label": "Thở khò khè"
+        },
+        {
+            "id": "peripheral edema",
+            "vi_label": "Phù ngoại biên"
+        },
+        {
+            "id": "neck mass",
+            "vi_label": "Khối cổ"
+        },
+        {
+            "id": "ear pain",
+            "vi_label": "Đau tai"
+        },
+        {
+            "id": "jaw swelling",
+            "vi_label": "Sưng hàm"
+        },
+        {
+            "id": "mouth dryness",
+            "vi_label": "Khô miệng"
+        },
+        {
+            "id": "neck swelling",
+            "vi_label": "Sưng cổ"
+        },
+        {
+            "id": "knee pain",
+            "vi_label": "Đau đầu gối"
+        },
+        {
+            "id": "foot or toe pain",
+            "vi_label": "Đau chân hoặc ngón chân"
+        },
+        {
+            "id": "bowlegged or knock-kneed",
+            "vi_label": "Chân vòng kiềng hoặc khuỵu gối"
+        },
+        {
+            "id": "ankle pain",
+            "vi_label": "Đau mắt cá chân"
+        },
+        {
+            "id": "bones are painful",
+            "vi_label": "Xương rất đau"
+        },
+        {
+            "id": "knee weakness",
+            "vi_label": "Yếu đầu gối"
+        },
+        {
+            "id": "elbow pain",
+            "vi_label": "Đau khuỷu tay"
+        },
+        {
+            "id": "knee swelling",
+            "vi_label": "Sưng đầu gối"
+        },
+        {
+            "id": "skin moles",
+            "vi_label": "Nốt ruồi trên da"
+        },
+        {
+            "id": "knee lump or mass",
+            "vi_label": "Cục hoặc khối đầu gối"
+        },
+        {
+            "id": "weight gain",
+            "vi_label": "Tăng cân"
+        },
+        {
+            "id": "problems with movement",
+            "vi_label": "Vấn đề với phong trào"
+        },
+        {
+            "id": "knee stiffness or tightness",
+            "vi_label": "Cứng đầu gối hoặc căng cứng"
+        },
+        {
+            "id": "leg swelling",
+            "vi_label": "Sưng chân"
+        },
+        {
+            "id": "foot or toe swelling",
+            "vi_label": "Sưng chân hoặc ngón chân"
+        },
+        {
+            "id": "heartburn",
+            "vi_label": "Ợ nóng"
+        },
+        {
+            "id": "smoking problems",
+            "vi_label": "Vấn đề hút thuốc"
+        },
+        {
+            "id": "muscle pain",
+            "vi_label": "Đau cơ"
+        },
+        {
+            "id": "infant feeding problem",
+            "vi_label": "Vấn đề ăn dặm của trẻ sơ sinh"
+        },
+        {
+            "id": "recent weight loss",
+            "vi_label": "Giảm cân gần đây"
+        },
+        {
+            "id": "problems with shape or size of breast",
+            "vi_label": "Vấn đề về hình dạng hoặc kích thước của vú"
+        },
+        {
+            "id": "underweight",
+            "vi_label": "Nhẹ cân"
+        },
+        {
+            "id": "difficulty eating",
+            "vi_label": "Khó ăn"
+        },
+        {
+            "id": "scanty menstrual flow",
+            "vi_label": "Kinh nguyệt ít"
+        },
+        {
+            "id": "vaginal pain",
+            "vi_label": "Đau âm đạo"
+        },
+        {
+            "id": "vaginal redness",
+            "vi_label": "Đỏ âm đạo"
+        },
+        {
+            "id": "vulvar irritation",
+            "vi_label": "Kích thích âm hộ"
+        },
+        {
+            "id": "weakness",
+            "vi_label": "Điểm yếu"
+        },
+        {
+            "id": "decreased heart rate",
+            "vi_label": "Nhịp tim giảm"
+        },
+        {
+            "id": "increased heart rate",
+            "vi_label": "Nhịp tim tăng"
+        },
+        {
+            "id": "bleeding or discharge from nipple",
+            "vi_label": "Chảy máu hoặc chảy ra từ núm vú"
+        },
+        {
+            "id": "ringing in ear",
+            "vi_label": "Ù tai"
+        },
+        {
+            "id": "plugged feeling in ear",
+            "vi_label": "Cảm giác bị cắm vào tai"
+        },
+        {
+            "id": "itchy ear(s)",
+            "vi_label": "Ngứa tai"
+        },
+        {
+            "id": "frontal headache",
+            "vi_label": "Đau đầu vùng trán"
+        },
+        {
+            "id": "fluid in ear",
+            "vi_label": "Chất lỏng trong tai"
+        },
+        {
+            "id": "neck stiffness or tightness",
+            "vi_label": "Cứng cổ hoặc căng cứng"
+        },
+        {
+            "id": "spots or clouds in vision",
+            "vi_label": "Đốm hoặc đám mây trong tầm nhìn"
+        },
+        {
+            "id": "eye redness",
+            "vi_label": "Đỏ mắt"
+        },
+        {
+            "id": "lacrimation",
+            "vi_label": "Chảy nước mắt"
+        },
+        {
+            "id": "itchiness of eye",
+            "vi_label": "Ngứa mắt"
+        },
+        {
+            "id": "blindness",
+            "vi_label": "Mù lòa"
+        },
+        {
+            "id": "eye burns or stings",
+            "vi_label": "Bỏng mắt hoặc chích"
+        },
+        {
+            "id": "itchy eyelid",
+            "vi_label": "Ngứa mí mắt"
+        },
+        {
+            "id": "feeling cold",
+            "vi_label": "Cảm thấy lạnh"
+        },
+        {
+            "id": "decreased appetite",
+            "vi_label": "Giảm cảm giác thèm ăn"
+        },
+        {
+            "id": "excessive appetite",
+            "vi_label": "Thèm ăn quá mức"
+        },
+        {
+            "id": "excessive anger",
+            "vi_label": "Tức giận quá mức"
+        },
+        {
+            "id": "loss of sensation",
+            "vi_label": "Mất cảm giác"
+        },
+        {
+            "id": "focal weakness",
+            "vi_label": "Điểm yếu trọng điểm"
+        },
+        {
+            "id": "slurring words",
+            "vi_label": "Những lời nói lắp bắp"
+        },
+        {
+            "id": "symptoms of the face",
+            "vi_label": "Triệu chứng của khuôn mặt"
+        },
+        {
+            "id": "disturbance of memory",
+            "vi_label": "Rối loạn trí nhớ"
+        },
+        {
+            "id": "paresthesia",
+            "vi_label": "Dị cảm"
+        },
+        {
+            "id": "side pain",
+            "vi_label": "Đau bên hông"
+        },
+        {
+            "id": "fever",
+            "vi_label": "Sốt"
+        },
+        {
+            "id": "shoulder pain",
+            "vi_label": "Đau vai"
+        },
+        {
+            "id": "shoulder stiffness or tightness",
+            "vi_label": "Cứng vai hoặc căng cứng"
+        },
+        {
+            "id": "shoulder weakness",
+            "vi_label": "Yếu vai"
+        },
+        {
+            "id": "arm cramps or spasms",
+            "vi_label": "Chuột rút hoặc co thắt cánh tay"
+        },
+        {
+            "id": "shoulder swelling",
+            "vi_label": "Sưng vai"
+        },
+        {
+            "id": "tongue lesions",
+            "vi_label": "Tổn thương lưỡi"
+        },
+        {
+            "id": "leg cramps or spasms",
+            "vi_label": "Chuột rút hoặc co thắt ở chân"
+        },
+        {
+            "id": "abnormal appearing tongue",
+            "vi_label": "Lưỡi xuất hiện bất thường"
+        },
+        {
+            "id": "ache all over",
+            "vi_label": "Đau khắp người"
+        },
+        {
+            "id": "lower body pain",
+            "vi_label": "Đau phần dưới cơ thể"
+        },
+        {
+            "id": "problems during pregnancy",
+            "vi_label": "Vấn đề khi mang thai"
+        },
+        {
+            "id": "spotting or bleeding during pregnancy",
+            "vi_label": "Đốm hoặc chảy máu khi mang thai"
+        },
+        {
+            "id": "cramps and spasms",
+            "vi_label": "Chuột rút và co thắt"
+        },
+        {
+            "id": "upper abdominal pain",
+            "vi_label": "Đau bụng trên"
+        },
+        {
+            "id": "stomach bloating",
+            "vi_label": "Chướng bụng"
+        },
+        {
+            "id": "changes in stool appearance",
+            "vi_label": "Thay đổi về hình dạng phân"
+        },
+        {
+            "id": "unusual color or odor to urine",
+            "vi_label": "Màu sắc hoặc mùi bất thường của nước tiểu"
+        },
+        {
+            "id": "kidney mass",
+            "vi_label": "Khối lượng thận"
+        },
+        {
+            "id": "swollen abdomen",
+            "vi_label": "Bụng sưng tấy"
+        },
+        {
+            "id": "symptoms of prostate",
+            "vi_label": "Triệu chứng của tuyến tiền liệt"
+        },
+        {
+            "id": "leg stiffness or tightness",
+            "vi_label": "Cứng chân hoặc căng cứng"
+        },
+        {
+            "id": "difficulty breathing",
+            "vi_label": "Khó thở"
+        },
+        {
+            "id": "rib pain",
+            "vi_label": "Đau xương sườn"
+        },
+        {
+            "id": "joint pain",
+            "vi_label": "Đau khớp"
+        },
+        {
+            "id": "muscle stiffness or tightness",
+            "vi_label": "Cứng cơ hoặc căng cứng"
+        },
+        {
+            "id": "pallor",
+            "vi_label": "Xanh xao"
+        },
+        {
+            "id": "hand or finger lump or mass",
+            "vi_label": "Cục hoặc khối ở bàn tay hoặc ngón tay"
+        },
+        {
+            "id": "chills",
+            "vi_label": "Ớn lạnh"
+        },
+        {
+            "id": "groin pain",
+            "vi_label": "Đau háng"
+        },
+        {
+            "id": "fatigue",
+            "vi_label": "Mệt mỏi"
+        },
+        {
+            "id": "abdominal distention",
+            "vi_label": "Chướng bụng"
+        },
+        {
+            "id": "regurgitation.1",
+            "vi_label": "Trào ngược.1"
+        },
+        {
+            "id": "symptoms of the kidneys",
+            "vi_label": "Triệu chứng của thận"
+        },
+        {
+            "id": "melena",
+            "vi_label": "Melena"
+        },
+        {
+            "id": "flushing",
+            "vi_label": "Xả nước"
+        },
+        {
+            "id": "coughing up sputum",
+            "vi_label": "Ho ra đờm"
+        },
+        {
+            "id": "seizures",
+            "vi_label": "Cơn động kinh"
+        },
+        {
+            "id": "delusions or hallucinations",
+            "vi_label": "Ảo tưởng hoặc ảo giác"
+        },
+        {
+            "id": "shoulder cramps or spasms",
+            "vi_label": "Chuột rút hoặc co thắt vai"
+        },
+        {
+            "id": "joint stiffness or tightness",
+            "vi_label": "Độ cứng khớp hoặc độ kín"
+        },
+        {
+            "id": "pain or soreness of breast",
+            "vi_label": "Đau hoặc đau nhức vú"
+        },
+        {
+            "id": "excessive urination at night",
+            "vi_label": "Đi tiểu nhiều vào ban đêm"
+        },
+        {
+            "id": "bleeding from eye",
+            "vi_label": "Chảy máu từ mắt"
+        },
+        {
+            "id": "rectal bleeding",
+            "vi_label": "Chảy máu trực tràng"
+        },
+        {
+            "id": "constipation",
+            "vi_label": "Táo bón"
+        },
+        {
+            "id": "temper problems",
+            "vi_label": "Vấn đề nóng nảy"
+        },
+        {
+            "id": "coryza",
+            "vi_label": "Sổ mũi"
+        },
+        {
+            "id": "wrist weakness",
+            "vi_label": "Yếu cổ tay"
+        },
+        {
+            "id": "eye strain",
+            "vi_label": "Mỏi mắt"
+        },
+        {
+            "id": "hemoptysis",
+            "vi_label": "Ho ra máu"
+        },
+        {
+            "id": "lymphedema",
+            "vi_label": "Phù bạch huyết"
+        },
+        {
+            "id": "skin on leg or foot looks infected",
+            "vi_label": "Da ở chân hoặc bàn chân trông có vẻ bị nhiễm trùng"
+        },
+        {
+            "id": "allergic reaction",
+            "vi_label": "Phản ứng dị ứng"
+        },
+        {
+            "id": "congestion in chest",
+            "vi_label": "Tắc nghẽn ở ngực"
+        },
+        {
+            "id": "muscle swelling",
+            "vi_label": "Sưng cơ"
+        },
+        {
+            "id": "pus in urine",
+            "vi_label": "Mủ trong nước tiểu"
+        },
+        {
+            "id": "abnormal size or shape of ear",
+            "vi_label": "Kích thước hoặc hình dạng bất thường của tai"
+        },
+        {
+            "id": "low back weakness",
+            "vi_label": "Điểm yếu ở lưng dưới"
+        },
+        {
+            "id": "sleepiness",
+            "vi_label": "Buồn ngủ"
+        },
+        {
+            "id": "apnea",
+            "vi_label": "Ngưng thở"
+        },
+        {
+            "id": "abnormal breathing sounds",
+            "vi_label": "Tiếng thở bất thường"
+        },
+        {
+            "id": "excessive growth",
+            "vi_label": "Tăng trưởng quá mức"
+        },
+        {
+            "id": "elbow cramps or spasms",
+            "vi_label": "Chuột rút hoặc co thắt khuỷu tay"
+        },
+        {
+            "id": "feeling hot and cold",
+            "vi_label": "Cảm giác nóng và lạnh"
+        },
+        {
+            "id": "blood clots during menstrual periods",
+            "vi_label": "Cục máu đông trong thời kỳ kinh nguyệt"
+        },
+        {
+            "id": "absence of menstruation",
+            "vi_label": "Không có kinh nguyệt"
+        },
+        {
+            "id": "pulling at ears",
+            "vi_label": "Kéo tai"
+        },
+        {
+            "id": "gum pain",
+            "vi_label": "Đau nướu"
+        },
+        {
+            "id": "redness in ear",
+            "vi_label": "Tai đỏ"
+        },
+        {
+            "id": "fluid retention",
+            "vi_label": "Giữ nước"
+        },
+        {
+            "id": "flu-like syndrome",
+            "vi_label": "Hội chứng giống cúm"
+        },
+        {
+            "id": "sinus congestion",
+            "vi_label": "Tắc nghẽn xoang"
+        },
+        {
+            "id": "painful sinuses",
+            "vi_label": "Xoang đau đớn"
+        },
+        {
+            "id": "fears and phobias",
+            "vi_label": "Nỗi sợ hãi và ám ảnh"
+        },
+        {
+            "id": "recent pregnancy",
+            "vi_label": "Mang thai gần đây"
+        },
+        {
+            "id": "uterine contractions",
+            "vi_label": "Cơn co tử cung"
+        },
+        {
+            "id": "burning chest pain",
+            "vi_label": "Đau ngực nóng rát"
+        },
+        {
+            "id": "back cramps or spasms",
+            "vi_label": "Chuột rút hoặc co thắt lưng"
+        },
+        {
+            "id": "stiffness all over",
+            "vi_label": "Cứng toàn thân"
+        },
+        {
+            "id": "muscle cramps, contractures, or spasms",
+            "vi_label": "Chuột rút, co rút hoặc co thắt cơ"
+        },
+        {
+            "id": "low back cramps or spasms",
+            "vi_label": "Chuột rút hoặc co thắt lưng"
+        },
+        {
+            "id": "back mass or lump",
+            "vi_label": "Khối lượng trở lại hoặc khối u"
+        },
+        {
+            "id": "nosebleed",
+            "vi_label": "Chảy máu cam"
+        },
+        {
+            "id": "long menstrual periods",
+            "vi_label": "Kinh nguyệt kéo dài"
+        },
+        {
+            "id": "heavy menstrual flow",
+            "vi_label": "Kinh nguyệt ra nhiều"
+        },
+        {
+            "id": "unpredictable menstruation",
+            "vi_label": "Kinh nguyệt khó dự đoán"
+        },
+        {
+            "id": "painful menstruation",
+            "vi_label": "Kinh nguyệt đau đớn"
+        },
+        {
+            "id": "infertility",
+            "vi_label": "Vô sinh"
+        },
+        {
+            "id": "frequent menstruation",
+            "vi_label": "Kinh nguyệt thường xuyên"
+        },
+        {
+            "id": "sweating",
+            "vi_label": "Đổ mồ hôi"
+        },
+        {
+            "id": "mass on eyelid",
+            "vi_label": "Khối trên mí mắt"
+        },
+        {
+            "id": "swollen eye",
+            "vi_label": "Mắt sưng tấy"
+        },
+        {
+            "id": "eyelid swelling",
+            "vi_label": "Sưng mí mắt"
+        },
+        {
+            "id": "eyelid lesion or rash",
+            "vi_label": "Tổn thương mí mắt hoặc phát ban"
+        },
+        {
+            "id": "unwanted hair",
+            "vi_label": "Tóc không mong muốn"
+        },
+        {
+            "id": "symptoms of bladder",
+            "vi_label": "Triệu chứng bàng quang"
+        },
+        {
+            "id": "irregular appearing nails",
+            "vi_label": "Móng tay xuất hiện không đều"
+        },
+        {
+            "id": "itching of skin",
+            "vi_label": "Ngứa da"
+        },
+        {
+            "id": "hurts to breath",
+            "vi_label": "Đau đến khó thở"
+        },
+        {
+            "id": "nailbiting",
+            "vi_label": "Cắn móng tay"
+        },
+        {
+            "id": "skin dryness, peeling, scaliness, or roughness",
+            "vi_label": "Khô da, bong tróc, đóng vảy hoặc thô ráp"
+        },
+        {
+            "id": "skin on arm or hand looks infected",
+            "vi_label": "Da trên cánh tay hoặc bàn tay trông có vẻ bị nhiễm trùng"
+        },
+        {
+            "id": "skin irritation",
+            "vi_label": "Kích ứng da"
+        },
+        {
+            "id": "itchy scalp",
+            "vi_label": "Ngứa da đầu"
+        },
+        {
+            "id": "hip swelling",
+            "vi_label": "Sưng hông"
+        },
+        {
+            "id": "incontinence of stool",
+            "vi_label": "Đại tiện không tự chủ"
+        },
+        {
+            "id": "foot or toe cramps or spasms",
+            "vi_label": "Chuột rút hoặc co thắt ở bàn chân hoặc ngón chân"
+        },
+        {
+            "id": "warts",
+            "vi_label": "Mụn cóc"
+        },
+        {
+            "id": "bumps on penis",
+            "vi_label": "Vết sưng trên dương vật"
+        },
+        {
+            "id": "too little hair",
+            "vi_label": "Tóc quá ít"
+        },
+        {
+            "id": "foot or toe lump or mass",
+            "vi_label": "Cục hoặc khối ở bàn chân hoặc ngón chân"
+        },
+        {
+            "id": "skin rash",
+            "vi_label": "Phát ban da"
+        },
+        {
+            "id": "mass or swelling around the anus",
+            "vi_label": "Khối hoặc sưng quanh hậu môn"
+        },
+        {
+            "id": "low back swelling",
+            "vi_label": "Sưng vùng thắt lưng"
+        },
+        {
+            "id": "ankle swelling",
+            "vi_label": "Sưng mắt cá chân"
+        },
+        {
+            "id": "hip lump or mass",
+            "vi_label": "Cục hoặc khối ở hông"
+        },
+        {
+            "id": "drainage in throat",
+            "vi_label": "Thoát nước trong cổ họng"
+        },
+        {
+            "id": "dry or flaky scalp",
+            "vi_label": "Da đầu khô hoặc bong tróc"
+        },
+        {
+            "id": "premenstrual tension or irritability",
+            "vi_label": "Căng thẳng hoặc khó chịu tiền kinh nguyệt"
+        },
+        {
+            "id": "feeling hot",
+            "vi_label": "Cảm thấy nóng"
+        },
+        {
+            "id": "feet turned in",
+            "vi_label": "Bàn chân quay vào"
+        },
+        {
+            "id": "foot or toe stiffness or tightness",
+            "vi_label": "Độ cứng hoặc độ kín của bàn chân hoặc ngón chân"
+        },
+        {
+            "id": "pelvic pressure",
+            "vi_label": "Áp lực vùng chậu"
+        },
+        {
+            "id": "elbow swelling",
+            "vi_label": "Sưng khuỷu tay"
+        },
+        {
+            "id": "elbow stiffness or tightness",
+            "vi_label": "Cứng hoặc căng khuỷu tay"
+        },
+        {
+            "id": "early or late onset of menopause",
+            "vi_label": "Bắt đầu mãn kinh sớm hay muộn"
+        },
+        {
+            "id": "mass on ear",
+            "vi_label": "Khối lượng trên tai"
+        },
+        {
+            "id": "bleeding from ear",
+            "vi_label": "Chảy máu từ tai"
+        },
+        {
+            "id": "hand or finger weakness",
+            "vi_label": "Yếu tay hoặc ngón tay"
+        },
+        {
+            "id": "low self-esteem",
+            "vi_label": "Lòng tự trọng thấp"
+        },
+        {
+            "id": "throat irritation",
+            "vi_label": "Kích ứng họng"
+        },
+        {
+            "id": "itching of the anus",
+            "vi_label": "Ngứa hậu môn"
+        },
+        {
+            "id": "swollen or red tonsils",
+            "vi_label": "Amidan sưng hoặc đỏ"
+        },
+        {
+            "id": "irregular belly button",
+            "vi_label": "Rốn không đều"
+        },
+        {
+            "id": "swollen tongue",
+            "vi_label": "Lưỡi sưng tấy"
+        },
+        {
+            "id": "lip sore",
+            "vi_label": "Đau môi"
+        },
+        {
+            "id": "vulvar sore",
+            "vi_label": "Đau âm hộ"
+        },
+        {
+            "id": "hip stiffness or tightness",
+            "vi_label": "Độ cứng hoặc độ căng của hông"
+        },
+        {
+            "id": "mouth pain",
+            "vi_label": "Đau miệng"
+        },
+        {
+            "id": "arm weakness",
+            "vi_label": "Điểm yếu của cánh tay"
+        },
+        {
+            "id": "leg lump or mass",
+            "vi_label": "Cục hoặc khối ở chân"
+        },
+        {
+            "id": "disturbance of smell or taste",
+            "vi_label": "Rối loạn mùi hoặc vị"
+        },
+        {
+            "id": "discharge in stools",
+            "vi_label": "Xả trong phân"
+        },
+        {
+            "id": "penis pain",
+            "vi_label": "Đau dương vật"
+        },
+        {
+            "id": "loss of sex drive",
+            "vi_label": "Mất ham muốn tình dục"
+        },
+        {
+            "id": "obsessions and compulsions",
+            "vi_label": "Nỗi ám ảnh và sự ép buộc"
+        },
+        {
+            "id": "antisocial behavior",
+            "vi_label": "Hành vi chống đối xã hội"
+        },
+        {
+            "id": "neck cramps or spasms",
+            "vi_label": "Chuột rút hoặc co thắt cổ"
+        },
+        {
+            "id": "pupils unequal",
+            "vi_label": "Học sinh không đồng đều"
+        },
+        {
+            "id": "poor circulation",
+            "vi_label": "Tuần hoàn kém"
+        },
+        {
+            "id": "thirst",
+            "vi_label": "Khát nước"
+        },
+        {
+            "id": "sleepwalking",
+            "vi_label": "Mộng du"
+        },
+        {
+            "id": "skin oiliness",
+            "vi_label": "Da nhờn"
+        },
+        {
+            "id": "sneezing",
+            "vi_label": "Hắt hơi"
+        },
+        {
+            "id": "bladder mass",
+            "vi_label": "Khối bàng quang"
+        },
+        {
+            "id": "knee cramps or spasms",
+            "vi_label": "Chuột rút hoặc co thắt đầu gối"
+        },
+        {
+            "id": "premature ejaculation",
+            "vi_label": "Xuất tinh sớm"
+        },
+        {
+            "id": "leg weakness",
+            "vi_label": "Yếu chân"
+        },
+        {
+            "id": "posture problems",
+            "vi_label": "Vấn đề về tư thế"
+        },
+        {
+            "id": "bleeding in mouth",
+            "vi_label": "Chảy máu trong miệng"
+        },
+        {
+            "id": "tongue bleeding",
+            "vi_label": "Chảy máu lưỡi"
+        },
+        {
+            "id": "change in skin mole size or color",
+            "vi_label": "Thay đổi kích thước hoặc màu sắc nốt ruồi trên da"
+        },
+        {
+            "id": "penis redness",
+            "vi_label": "Đỏ dương vật"
+        },
+        {
+            "id": "penile discharge",
+            "vi_label": "Xả dương vật"
+        },
+        {
+            "id": "shoulder lump or mass",
+            "vi_label": "Khối u hoặc khối ở vai"
+        },
+        {
+            "id": "polyuria",
+            "vi_label": "Đa niệu"
+        },
+        {
+            "id": "cloudy eye",
+            "vi_label": "Mắt đục"
+        },
+        {
+            "id": "hysterical behavior",
+            "vi_label": "Hành vi cuồng loạn"
+        },
+        {
+            "id": "arm lump or mass",
+            "vi_label": "Khối u hoặc khối ở cánh tay"
+        },
+        {
+            "id": "nightmares",
+            "vi_label": "Ác mộng"
+        },
+        {
+            "id": "bleeding gums",
+            "vi_label": "Chảy máu nướu răng"
+        },
+        {
+            "id": "pain in gums",
+            "vi_label": "Đau nướu răng"
+        },
+        {
+            "id": "bedwetting",
+            "vi_label": "Đái dầm"
+        },
+        {
+            "id": "diaper rash",
+            "vi_label": "Hăm tã"
+        },
+        {
+            "id": "lump or mass of breast",
+            "vi_label": "Khối u hoặc khối vú"
+        },
+        {
+            "id": "vaginal bleeding after menopause",
+            "vi_label": "Chảy máu âm đạo sau mãn kinh"
+        },
+        {
+            "id": "infrequent menstruation",
+            "vi_label": "Kinh nguyệt không thường xuyên"
+        },
+        {
+            "id": "mass on vulva",
+            "vi_label": "Khối trên âm hộ"
+        },
+        {
+            "id": "jaw pain",
+            "vi_label": "Đau hàm"
+        },
+        {
+            "id": "itching of scrotum",
+            "vi_label": "Ngứa bìu"
+        },
+        {
+            "id": "postpartum problems of the breast",
+            "vi_label": "Vấn đề về ngực sau sinh"
+        },
+        {
+            "id": "eyelid retracted",
+            "vi_label": "Mí mắt rút lại"
+        },
+        {
+            "id": "hesitancy",
+            "vi_label": "Sự do dự"
+        },
+        {
+            "id": "elbow lump or mass",
+            "vi_label": "Cục hoặc khối khuỷu tay"
+        },
+        {
+            "id": "muscle weakness",
+            "vi_label": "Yếu cơ"
+        },
+        {
+            "id": "throat redness",
+            "vi_label": "Cổ họng đỏ"
+        },
+        {
+            "id": "joint swelling",
+            "vi_label": "Sưng khớp"
+        },
+        {
+            "id": "tongue pain",
+            "vi_label": "Đau lưỡi"
+        },
+        {
+            "id": "redness in or around nose",
+            "vi_label": "Đỏ trong hoặc xung quanh mũi"
+        },
+        {
+            "id": "wrinkles on skin",
+            "vi_label": "Nếp nhăn trên da"
+        },
+        {
+            "id": "foot or toe weakness",
+            "vi_label": "Yếu bàn chân hoặc ngón chân"
+        },
+        {
+            "id": "hand or finger cramps or spasms",
+            "vi_label": "Chuột rút hoặc co thắt bàn tay hoặc ngón tay"
+        },
+        {
+            "id": "back stiffness or tightness",
+            "vi_label": "Độ cứng hoặc độ kín của lưng"
+        },
+        {
+            "id": "wrist lump or mass",
+            "vi_label": "Cục hoặc khối ở cổ tay"
+        },
+        {
+            "id": "skin pain",
+            "vi_label": "Đau da"
+        },
+        {
+            "id": "low back stiffness or tightness",
+            "vi_label": "Độ cứng hoặc độ kín của lưng thấp"
+        },
+        {
+            "id": "low urine output",
+            "vi_label": "Lượng nước tiểu thấp"
+        },
+        {
+            "id": "skin on head or neck looks infected",
+            "vi_label": "Da trên đầu hoặc cổ trông có vẻ bị nhiễm trùng"
+        },
+        {
+            "id": "stuttering or stammering",
+            "vi_label": "Nói lắp hoặc nói lắp"
+        },
+        {
+            "id": "problems with orgasm",
+            "vi_label": "Vấn đề với cực khoái"
+        },
+        {
+            "id": "nose deformity",
+            "vi_label": "Biến dạng mũi"
+        },
+        {
+            "id": "lump over jaw",
+            "vi_label": "Vón cục trên hàm"
+        },
+        {
+            "id": "sore in nose",
+            "vi_label": "Đau mũi"
+        },
+        {
+            "id": "hip weakness",
+            "vi_label": "Điểm yếu hông"
+        },
+        {
+            "id": "back swelling",
+            "vi_label": "Sưng lưng"
+        },
+        {
+            "id": "ankle stiffness or tightness",
+            "vi_label": "Cứng mắt cá chân hoặc căng cứng"
+        },
+        {
+            "id": "ankle weakness",
+            "vi_label": "Yếu mắt cá chân"
+        },
+        {
+            "id": "neck weakness",
+            "vi_label": "Yếu cổ"
+        }
+    ]
+}

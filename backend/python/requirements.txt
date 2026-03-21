@@ -1,0 +1,6 @@
+tensorflow; python_version < "3.13"
+numpy
+flask
+pillow
+joblib
+scikit-learn
