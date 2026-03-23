@@ -1,12 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import DiagnosisPage from './pages/DiagnosisPage';
-import DashboardPage from './pages/DashboardPage';
-import { Activity, BarChart2, ShieldPlus } from 'lucide-react';
+import { Activity, ShieldPlus } from 'lucide-react';
 
 function App() {
-  // State quản lý tab đang được chọn (mặc định là trang chẩn đoán)
-  const [activeTab, setActiveTab] = useState('diagnosis');
-
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col">
       {/* Thanh Header & Điều hướng Tabs */}
@@ -26,24 +22,10 @@ function App() {
           {/* Khu vực Tabs */}
           <div className="flex space-x-1 bg-slate-100 p-1.5 rounded-2xl border border-slate-200">
             <button
-              onClick={() => setActiveTab('diagnosis')}
-              className={`flex items-center px-5 py-2.5 text-sm font-semibold rounded-xl transition-all duration-300 ${activeTab === 'diagnosis'
-                  ? 'bg-white text-blue-700 shadow-sm transform scale-100'
-                  : 'text-slate-500 hover:text-blue-600 hover:bg-slate-200/50 scale-95'
-                }`}
+              className="flex items-center px-5 py-2.5 text-sm font-semibold rounded-xl transition-all duration-300 bg-white text-blue-700 shadow-sm"
             >
               <Activity className="w-4 h-4 mr-2" />
               Chẩn Đoán Bệnh
-            </button>
-            <button
-              onClick={() => setActiveTab('dashboard')}
-              className={`flex items-center px-5 py-2.5 text-sm font-semibold rounded-xl transition-all duration-300 ${activeTab === 'dashboard'
-                  ? 'bg-white text-blue-700 shadow-sm transform scale-100'
-                  : 'text-slate-500 hover:text-blue-600 hover:bg-slate-200/50 scale-95'
-                }`}
-            >
-              <BarChart2 className="w-4 h-4 mr-2" />
-              Dashboard Thống Kê
             </button>
           </div>
 
@@ -53,7 +35,7 @@ function App() {
       {/* Khu vực Nội dung chính (Thay đổi dựa theo Tab) */}
       <main className="flex-grow">
         <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-          {activeTab === 'diagnosis' ? <DiagnosisPage /> : <DashboardPage />}
+          <DiagnosisPage />
         </div>
       </main>
     </div>

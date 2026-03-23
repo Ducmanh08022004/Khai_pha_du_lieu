@@ -1,5 +1,40 @@
 # React + Vite
 
+## Chạy web (Frontend + Backend)
+
+### 1) Chạy backend + model
+
+Trong thư mục `backend`:
+
+```bash
+npm install
+npm run dev:all
+```
+
+`dev:all` sẽ tự chạy:
+- Python image inference API: `http://127.0.0.1:8000`
+- Python text inference API: `http://127.0.0.1:8001`
+- Node backend: `http://localhost:3000`
+
+Nếu bạn muốn chạy thủ công Python API, xem hướng dẫn trong `backend/README.md`.
+
+### 2) Chạy frontend
+
+Trong thư mục `frontend`:
+
+```bash
+npm install
+npm run dev
+```
+
+Mặc định frontend sẽ gọi backend tại `http://localhost:3000`.
+
+Nếu backend chạy port khác, tạo file `.env` trong `frontend`:
+
+```bash
+VITE_BACKEND_URL=http://localhost:3000
+```
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

@@ -1,11 +1,32 @@
-import React, { useState, useRef } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { UploadCloud, X, Zap, Target, Loader2, Image as ImageIcon } from 'lucide-react';
-// import { diagnoseDisease, diagnoseImage } from '../services/api'; // Mở khi Backend sẵn sàng
+import { predictFromImage, predictFromText } from '../services/api';
 
 const DiagnosisPage = () => {
-    // --- States cho Chẩn đoán văn bản (V3) ---
-    const [symptomInput, setSymptomInput] = useState('');
-    const [symptoms, setSymptoms] = useState([]);
+    const [symptomOptions, setSymptomOptions] = useState([]);
+    const [symptomQuery, setSymptomQuery] = useState('');
+
+    useEffect(() => {
+        let mounted = true;
+
+        import('../data/symptoms_dictionary_vi.json')
+            .then((mod) => {
+                const list = mod?.default?.symptoms;
+                const normalized = Array.isArray(list) ? list : [];
+                if (mounted) setSymptomOptions(normalized);
+            })
+            .catch((err) => {
+                console.error('Không thể tải danh sách triệu chứng:', err);
+                if (mounted) setSymptomOptions([]);
+            });
+
+        return () => {
+            mounted = false;
+        };
+    }, []);
+
+    // --- States cho Chẩn đoán văn bản (Chọn triệu chứng) ---
+    const [selectedSymptoms, setSelectedSymptoms] = useState([]);
 
     // --- States cho Chẩn đoán Hình ảnh (Mới) ---
     const fileInputRef = useRef(null);
@@ -15,21 +36,38 @@ const DiagnosisPage = () => {
     // --- States chung ---
     const [loading, setLoading] = useState(false);
     const [result, setResult] = useState(null);
+    const [errorMessage, setErrorMessage] = useState(null);
     const [diagnosisType, setDiagnosisType] = useState('text'); // 'text' hoặc 'image'
 
-    // --- Xử lý Chẩn đoán văn bản ---
-    const handleAddSymptom = (e) => {
-        if (e.key === 'Enter' && symptomInput.trim() !== '') {
-            if (!symptoms.includes(symptomInput.trim())) {
-                setSymptoms([...symptoms, symptomInput.trim()]);
+    const toggleSymptom = (viLabel) => {
+        setSelectedSymptoms((prev) => {
+            if (prev.includes(viLabel)) {
+                return prev.filter((item) => item !== viLabel);
             }
-            setSymptomInput('');
-        }
+            return [...prev, viLabel];
+        });
     };
 
-    const handleRemoveSymptom = (symptomToRemove) => {
-        setSymptoms(symptoms.filter((s) => s !== symptomToRemove));
+    const normalizeForSearch = (value) => {
+        return String(value || '')
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .replace(/\s+/g, ' ')
+            .trim();
     };
+
+    const filteredSymptomOptions = useMemo(() => {
+        const q = normalizeForSearch(symptomQuery);
+        if (!q) return symptomOptions;
+
+        return symptomOptions.filter((item) => {
+            const viLabel = item?.vi_label || '';
+            const id = item?.id || '';
+            const haystack = `${normalizeForSearch(viLabel)} ${normalizeForSearch(id)}`;
+            return haystack.includes(q);
+        });
+    }, [symptomOptions, symptomQuery]);
 
     // --- Xử lý Chẩn đoán Hình ảnh ---
     const handleImageChange = (e) => {
@@ -59,42 +97,46 @@ const DiagnosisPage = () => {
     const handleDiagnose = async () => {
         setLoading(true);
         setResult(null);
+        setErrorMessage(null);
 
         try {
-            // Mô phỏng thời gian chờ model (2 giây)
-            await new Promise((resolve) => setTimeout(resolve, 2000));
-
-            let mockData = {};
-
             if (diagnosisType === 'text') {
-                if (symptoms.length === 0) return;
-                // Mock data cho triệu chứng văn bản
-                mockData = {
-                    disease: "Sốt xuất huyết (Dengue Fever)",
-                    confidence: 88.5,
-                    advice: "Nghỉ ngơi, uống nhiều nước điện giải (Oresol) và theo dõi thân nhiệt. Cần đến ngay cơ sở y tế nếu có dấu hiệu xuất huyết dưới da hoặc chảy máu chân răng."
-                };
-                // GỌI API THỰC TẾ:
-                // mockData = await diagnoseDisease(symptoms);
+                if (selectedSymptoms.length === 0) return;
+                const data = await predictFromText(selectedSymptoms);
+                setResult(data);
             } else {
                 if (!selectedImage) return;
-                // Mock data cho hình ảnh (mẫu bệnh về da)
-                mockData = {
-                    disease: "Viêm da cơ địa (Eczema)",
-                    confidence: 94.2,
-                    advice: "Cần giữ ẩm da thường xuyên, tránh xa các tác nhân gây dị ứng. Sử dụng kem bôi dịu nhẹ được bác sĩ da liễu khuyên dùng. Tránh gãi làm xước da.",
-                    source: "image_2.png" // Mock hình ảnh tham khảo (VD nốt ban)
-                };
-                // GỌI API THỰC TẾ (sử dụng FormData):
-                // mockData = await diagnoseImage(selectedImage);
+                const data = await predictFromImage(selectedImage);
+                setResult(data);
             }
-
-            setResult(mockData);
         } catch (error) {
-            console.error("Lỗi khi gọi model chẩn đoán:", error);
+            console.error("Lỗi khi gọi API chẩn đoán:", error);
+            const message =
+                error?.response?.data?.message ||
+                error?.message ||
+                'Không thể gọi API chẩn đoán. Vui lòng kiểm tra backend/model đã chạy.';
+            setErrorMessage(message);
         } finally {
             setLoading(false);
         }
+    };
+
+    const topPredictions = useMemo(() => {
+        const list = result?.prediction?.predictions;
+        if (!Array.isArray(list)) return [];
+        return list.slice(0, 5);
+    }, [result]);
+
+    const getPredictionLabel = (item) => {
+        return item?.disease_vi || item?.disease || item?.benh || item?.code || '—';
+    };
+
+    const getPredictionPercent = (item) => {
+        if (typeof item?.confidence_percent === 'number') return item.confidence_percent;
+        if (typeof item?.phan_tram_tin_cay === 'number') return item.phan_tram_tin_cay;
+        if (typeof item?.confidence === 'number') return Math.round(item.confidence * 10000) / 100;
+        if (typeof item?.do_tin_cay === 'number') return Math.round(item.do_tin_cay * 10000) / 100;
+        return null;
     };
 
     return (
@@ -114,36 +156,55 @@ const DiagnosisPage = () => {
                     </div>
 
                     {/* Khu vực hiển thị Kết quả phân lớp (Mới) */}
-                    {result && !loading && (
+                    {errorMessage && !loading && (
                         <div className="mt-10 p-7 bg-white/95 backdrop-blur-sm rounded-3xl shadow-lg border border-white/20 transition-all text-left">
                             <h3 className="text-xs font-bold text-blue-700 uppercase tracking-widest mb-3 flex items-center">
-                                <Target className="w-4 h-4 mr-1.5" /> Kết quả phân tích cao nhất
+                                <Target className="w-4 h-4 mr-1.5" /> Lỗi
                             </h3>
-                            <p className="text-2xl font-extrabold text-gray-800 mb-6">{result.disease}</p>
+                            <p className="text-sm text-gray-700 leading-relaxed">{errorMessage}</p>
+                        </div>
+                    )}
 
-                            <div className="mb-6">
-                                <div className="flex justify-between text-sm mb-2">
-                                    <span className="font-semibold text-gray-600">Độ tin cậy của mô hình</span>
-                                    <span className="font-bold text-blue-700 text-base">{result.confidence}%</span>
-                                </div>
-                                <div className="w-full bg-gray-200 rounded-full h-3.5 overflow-hidden shadow-inner border border-gray-100">
-                                    <div
-                                        className="bg-gradient-to-r from-blue-400 to-blue-600 h-3.5 rounded-full transition-all duration-1000 ease-out"
-                                        style={{ width: `${result.confidence}%` }}
-                                    ></div>
-                                </div>
+                    {result && !loading && topPredictions.length > 0 && (
+                        <div className="mt-10 p-7 bg-white/95 backdrop-blur-sm rounded-3xl shadow-lg border border-white/20 transition-all text-left">
+                            <h3 className="text-xs font-bold text-blue-700 uppercase tracking-widest mb-3 flex items-center">
+                                <Target className="w-4 h-4 mr-1.5" /> Top 5 dự đoán
+                            </h3>
+
+                            <div className="space-y-4">
+                                {topPredictions.map((item, index) => {
+                                    const label = getPredictionLabel(item);
+                                    const percent = getPredictionPercent(item);
+                                    const width = Math.max(0, Math.min(100, percent ?? 0));
+
+                                    return (
+                                        <div key={`${label}-${index}`} className="bg-white/80 rounded-2xl p-4 border border-gray-100 shadow-sm">
+                                            <div className="flex items-start justify-between gap-3 mb-2">
+                                                <div className="min-w-0">
+                                                    <p className="text-sm font-semibold text-gray-800 truncate">
+                                                        {index + 1}. {label}
+                                                    </p>
+                                                    {item?.code && (
+                                                        <p className="text-[11px] text-gray-400">Mã: {item.code}</p>
+                                                    )}
+                                                </div>
+                                                <div className="text-right">
+                                                    <p className="text-sm font-bold text-blue-700">
+                                                        {percent !== null ? `${percent}%` : '—'}
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div className="w-full bg-gray-200 rounded-full h-3.5 overflow-hidden shadow-inner border border-gray-100">
+                                                <div
+                                                    className="bg-gradient-to-r from-blue-400 to-blue-600 h-3.5 rounded-full transition-all duration-700 ease-out"
+                                                    style={{ width: `${width}%` }}
+                                                ></div>
+                                            </div>
+                                        </div>
+                                    );
+                                })}
                             </div>
-
-                            <div className="bg-white p-4 rounded-xl text-sm text-gray-700 border border-gray-200 shadow-sm leading-relaxed mb-6">
-                                <span className="font-bold text-blue-800">💡 Lời khuyên: </span>
-                                {result.advice}
-                            </div>
-
-                            {result.source && (
-                                <p className="text-[11px] text-gray-400 mt-5 italic text-center px-4">
-                                    * Nguồn dữ liệu hình ảnh tham khảo: {result.source}.
-                                </p>
-                            )}
 
                             <p className="text-[11px] text-gray-400 mt-5 italic text-center px-4">
                                 * Lưu ý: Kết quả phân tích từ mô hình khai phá dữ liệu chỉ mang tính chất tham khảo cho đồ án môn học, không có giá trị thay thế chẩn đoán y tế chuyên nghiệp.
@@ -174,28 +235,80 @@ const DiagnosisPage = () => {
                         <div className="space-y-6">
                             <div>
                                 <label className="block text-sm font-semibold text-gray-700 mb-2.5">
-                                    Nhập triệu chứng của bạn (Nhập và nhấn Enter)
+                                    Chọn triệu chứng của bạn (tích chọn trong danh sách)
                                 </label>
-                                <input
-                                    type="text"
-                                    className="w-full border-2 border-gray-100 rounded-2xl px-5 py-3.5 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-300 transition-colors shadow-sm text-gray-700"
-                                    placeholder="VD: Sốt cao, phát ban, ho..."
-                                    value={symptomInput}
-                                    onChange={(e) => setSymptomInput(e.target.value)}
-                                    onKeyDown={handleAddSymptom}
-                                />
                             </div>
 
-                            <div className="flex flex-wrap gap-2.5 min-h-[48px] bg-slate-50 p-3 rounded-2xl border border-gray-100">
-                                {symptoms.map((symptom, index) => (
-                                    <span key={index} className="flex items-center bg-blue-50 text-blue-800 px-4 py-1.5 rounded-full text-sm font-medium border border-blue-100 shadow-sm transition-all hover:bg-blue-100">
-                                        {symptom}
-                                        <button onClick={() => handleRemoveSymptom(symptom)} className="ml-2 text-blue-400 hover:text-red-500 focus:outline-none font-bold">✕</button>
-                                    </span>
-                                ))}
-                                {symptoms.length === 0 && (
-                                    <span className="text-sm text-gray-400 italic flex items-center">Chưa có triệu chứng nào...</span>
-                                )}
+                            <div className="bg-slate-50 p-3 rounded-2xl border border-gray-100">
+                                <div className="flex items-center justify-between mb-3">
+                                    <span className="text-sm font-semibold text-gray-700">Triệu chứng đã chọn</span>
+                                    <span className="text-xs text-gray-500">{selectedSymptoms.length} đã chọn</span>
+                                </div>
+                                <div className="flex flex-wrap gap-2.5 min-h-[44px]">
+                                    {selectedSymptoms.map((symptom) => (
+                                        <button
+                                            key={symptom}
+                                            type="button"
+                                            onClick={() => toggleSymptom(symptom)}
+                                            className="flex items-center bg-white text-slate-900 px-4 py-1.5 rounded-full text-sm font-medium border border-slate-200 shadow-sm transition-all hover:border-slate-300"
+                                            title="Click để bỏ chọn"
+                                        >
+                                            {symptom}
+                                            <span className="ml-2 text-slate-400 font-bold">✕</span>
+                                        </button>
+                                    ))}
+                                    {selectedSymptoms.length === 0 && (
+                                        <span className="text-sm text-gray-400 italic flex items-center">Chưa chọn triệu chứng nào...</span>
+                                    )}
+                                </div>
+                            </div>
+
+                            <div className="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm">
+                                <div className="flex items-center justify-between mb-3">
+                                    <span className="text-sm font-semibold text-gray-700">Danh sách triệu chứng</span>
+                                    <span className="text-xs text-gray-500">{filteredSymptomOptions.length}/{symptomOptions.length} mục</span>
+                                </div>
+
+                                <div className="mb-3">
+                                    <input
+                                        type="text"
+                                        value={symptomQuery}
+                                        onChange={(e) => setSymptomQuery(e.target.value)}
+                                        placeholder="Tìm triệu chứng... (VD: sốt, ho, đau họng)"
+                                        className="w-full border-2 border-gray-100 rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-300 transition-colors shadow-sm text-gray-700"
+                                    />
+                                    <p className="mt-2 text-xs text-gray-400">
+                                        Có thể tìm theo tiếng Việt (bỏ dấu) hoặc ID tiếng Anh.
+                                    </p>
+                                </div>
+
+                                <div className="max-h-72 overflow-auto pr-1">
+                                    <div className="flex flex-wrap gap-2">
+                                        {filteredSymptomOptions.map((item) => {
+                                            const viLabel = item?.vi_label || item?.id;
+                                            const selected = viLabel && selectedSymptoms.includes(viLabel);
+
+                                            return (
+                                                <button
+                                                    key={item?.id || viLabel}
+                                                    type="button"
+                                                    onClick={() => viLabel && toggleSymptom(viLabel)}
+                                                    className={`px-4 py-2 rounded-full border text-sm font-medium transition-all bg-white ${selected
+                                                            ? 'border-slate-400 text-slate-900'
+                                                            : 'border-slate-200 text-slate-400 hover:text-slate-700 hover:border-slate-300'
+                                                        }`}
+                                                    title={item?.id ? `ID: ${item.id}` : undefined}
+                                                >
+                                                    {viLabel}
+                                                </button>
+                                            );
+                                        })}
+
+                                        {filteredSymptomOptions.length === 0 && (
+                                            <div className="text-sm text-gray-400 italic py-2">Không tìm thấy triệu chứng phù hợp.</div>
+                                        )}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     )}
@@ -262,12 +375,12 @@ const DiagnosisPage = () => {
                     <button
                         onClick={handleDiagnose}
                         disabled={
-                            (diagnosisType === 'text' && symptoms.length === 0) ||
+                            (diagnosisType === 'text' && selectedSymptoms.length === 0) ||
                             (diagnosisType === 'image' && !selectedImage) ||
                             loading
                         }
                         className={`w-full py-4.5 rounded-2xl text-white font-bold text-lg transition-all duration-300 shadow-md flex items-center justify-center
-              ${((diagnosisType === 'text' && symptoms.length === 0) || (diagnosisType === 'image' && !selectedImage))
+              ${((diagnosisType === 'text' && selectedSymptoms.length === 0) || (diagnosisType === 'image' && !selectedImage))
                                 ? 'bg-gray-300 cursor-not-allowed shadow-none'
                                 : 'bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 hover:shadow-lg transform hover:-translate-y-0.5'
                             }`}

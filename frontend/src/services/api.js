@@ -1,7 +1,9 @@
 import axios from 'axios';
 
-// Giả sử sau này Backend Python (Flask/FastAPI) chạy ở port 5000 hoặc 8000
-const API_URL = 'http://localhost:5000/api';
+// Node backend (Express) exposes: /api/v1/predict/text and /api/v1/predict/image
+// Allow overriding via Vite env: VITE_BACKEND_URL (e.g. http://localhost:3000)
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
+const API_URL = `${BACKEND_URL}/api/v1`;
 
 const apiClient = axios.create({
     baseURL: API_URL,
@@ -10,9 +12,21 @@ const apiClient = axios.create({
     },
 });
 
-export const diagnoseDisease = async (symptoms) => {
-    // Gửi danh sách triệu chứng lên model Python
-    const response = await apiClient.post('/diagnose', { symptoms });
+export const predictFromText = async (symptoms, metadata) => {
+    // POST /api/v1/predict/text
+    const response = await apiClient.post('/predict/text', { symptoms, metadata });
+    return response.data;
+};
+
+export const predictFromImage = async (imageFile) => {
+    // POST /api/v1/predict/image (multipart/form-data, field name: image)
+    const formData = new FormData();
+    formData.append('image', imageFile);
+
+    const response = await apiClient.post('/predict/image', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+    });
+
     return response.data;
 };
 

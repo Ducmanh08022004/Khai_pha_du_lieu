@@ -14,11 +14,15 @@ const pythonDir = path.join(backendDir, "python");
 
 const candidates = [];
 
-if (process.env.PYTHON_BIN) {
+// Prefer repo-root venv if present.
+candidates.push(path.join(backendDir, "..", ".venv", "Scripts", "python.exe"));
+
+// Only accept PYTHON_BIN when it points to an existing executable.
+if (process.env.PYTHON_BIN && process.env.PYTHON_BIN !== "python") {
   candidates.push(process.env.PYTHON_BIN);
 }
 
-candidates.push(path.join(backendDir, "..", ".venv", "Scripts", "python.exe"));
+// Fallback to system python.
 candidates.push("python");
 
 const pythonBin = candidates.find((candidate) => {
