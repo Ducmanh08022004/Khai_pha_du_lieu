@@ -79,6 +79,21 @@ Hoac:
 npm start
 ```
 
+Neu muon chay backend va tu dong bat ca 2 model Python (image + text):
+
+```bash
+npm run dev:all
+```
+
+Hoac mode production:
+
+```bash
+npm run start:all
+```
+
+Luu y: can dam bao lenh `python` dang tro vao dung moi truong da cai package trong `python/requirements.txt`.
+Mac dinh script se uu tien dung `../.venv/Scripts/python.exe` (neu ton tai). Co the custom bang bien moi truong `PYTHON_BIN`.
+
 Mac dinh server chay o `http://localhost:3000`.
 
 ## 6) API
