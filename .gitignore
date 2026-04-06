@@ -68,7 +68,6 @@ lightning_logs/
 events.out.tfevents*
 
 # ML artifacts / large files
-*.h5
 *.keras
 *.ckpt
 *.tflite

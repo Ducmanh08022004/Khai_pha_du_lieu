@@ -10,13 +10,13 @@ from PIL import Image
 CLASSES = ["akiec", "bcc", "bkl", "df", "mel", "nv", "vasc"]
 
 CLASSES_VI = {
-    "akiec": "Actinic Keratoses (Day sung anh sang)",
-    "bcc": "Basal Cell Carcinoma (Ung thu te bao day)",
-    "bkl": "Benign Keratosis (Day sung lanh tinh)",
-    "df": "Dermatofibroma (U xo da)",
-    "mel": "Melanoma (U hac to ac tinh)",
-    "nv": "Melanocytic Nevus (Not ruoi sac to)",
-    "vasc": "Vascular Lesion (Ton thuong mach mau)",
+    "akiec": "Actinic Keratoses (Dày sừng ánh sáng)",
+    "bcc": "Basal Cell Carcinoma (Ung thư biểu mô tế bào đáy)",
+    "bkl": "Benign Keratosis (Dày sừng lành tính)",
+    "df": "Dermatofibroma (U xơ da)",
+    "mel": "Melanoma (U hắc tố ác tính)",
+    "nv": "Melanocytic Nevus (Nốt ruồi sắc tố)",
+    "vasc": "Vascular Lesion (Tổn thương mạch máu)",
 }
 
 MODEL_PATH = os.path.abspath(
